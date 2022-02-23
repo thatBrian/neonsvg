@@ -46,9 +46,9 @@ export default function App() {
                     id={'neonText'}
                     style={{
                         color: fill,
-                        ['--stroke-color']: stroke,
-                        ['--neonStrokeWidth']: `${strokeWidth}px`,
-                        ['--glowColor']: `${glow}`,
+                        '--stroke-color': stroke,
+                        '--neonStrokeWidth': `${strokeWidth}px`,
+                        '--glowColor': `${glow}`,
                         width: parseInt(width) === 0 || !width ? 'auto' : `${width}px`,
                         overflow: 'hidden',
                         fontSize: `${fontSize}rem`,
