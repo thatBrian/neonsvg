@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
+import './Home.css';
 import domtoimage from 'dom-to-image-more';
 
-export default function Home() {
+export default function App() {
     const [text, setText] = useState('Sing!');
     const [fill, setFill] = useState('#ffffff');
     const [stroke, setStroke] = useState('#ffd600');
@@ -12,7 +12,7 @@ export default function Home() {
     const [width, setWidth] = useState(0);
     const [fontSize, setFontSize] = useState(8);
     const download = () => {
-        domtoimage.toPng(document.getElementById(styles.neonText)).then((dataUrl) => {
+        domtoimage.toPng(document.getElementById('neonText')).then((dataUrl) => {
             var link = document.createElement('a');
             link.download = 'neonText.png';
             link.href = dataUrl;
@@ -20,8 +20,8 @@ export default function Home() {
         });
     };
     return (
-        <div className={styles.container}>
-            <div className={styles.left}>
+        <div className={'container'}>
+            <div className={'left'}>
                 Text:
                 <input onChange={(e) => setText(e.target.value)} value={text} />
                 Fill Color:
@@ -41,9 +41,9 @@ export default function Home() {
                 <br />
                 <button onClick={download}>Download</button>
             </div>
-            <div className={styles.right} style={{ backgroundColor: background }}>
+            <div className={'right'} style={{ backgroundColor: background }}>
                 <div
-                    id={styles.neonText}
+                    id={'neonText'}
                     style={{
                         color: fill,
                         ['--stroke-color']: stroke,
