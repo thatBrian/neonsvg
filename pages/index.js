@@ -12,14 +12,12 @@ export default function Home() {
     const [width, setWidth] = useState(0);
     const [fontSize, setFontSize] = useState(8);
     const download = () => {
-        domtoimage
-            .toPng(document.getElementById(styles.neonText), { height: '2000px', width: '2000px' })
-            .then((dataUrl) => {
-                var link = document.createElement('a');
-                link.download = 'neonText.png';
-                link.href = dataUrl;
-                link.click();
-            });
+        domtoimage.toPng(document.getElementById(styles.neonText)).then((dataUrl) => {
+            var link = document.createElement('a');
+            link.download = 'neonText.png';
+            link.href = dataUrl;
+            link.click();
+        });
     };
     return (
         <div className={styles.container}>
