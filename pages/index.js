@@ -1,40 +1,52 @@
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
+import domtoimage from 'dom-to-image-more';
 
 export default function Home() {
     const [text, setText] = useState('Sing!');
     const [fill, setFill] = useState('#ffffff');
     const [stroke, setStroke] = useState('#ffd600');
     const [background, setBackground] = useState('#000000');
+    const [strokeWidth, setStrokeWidth] = useState(2);
+    const [glow, setGlow] = useState('#ffd600');
+    const download = () => {
+        domtoimage.toSvg(document.getElementById(styles.neonText)).then((dataUrl) => {
+            var link = document.createElement('a');
+            link.download = 'neonText.svg';
+            link.href = dataUrl;
+            link.click();
+        });
+    };
     return (
         <div className={styles.container}>
             <div className={styles.left}>
-                Input Text here:
+                Text:
                 <input onChange={(e) => setText(e.target.value)} value={text} />
-                Input Fill here:
+                Fill Color:
                 <input onChange={(e) => setFill(e.target.value)} value={fill} />
-                Input Stroke here:
+                Outline Color:
                 <input onChange={(e) => setStroke(e.target.value)} value={stroke} />
-                Input Background Color here:
+                Outline Width:
+                <input onChange={(e) => setStrokeWidth(e.target.value)} value={strokeWidth} />
+                Glow Color:
+                <input onChange={(e) => setGlow(e.target.value)} value={glow} />
+                Background Color:
                 <input onChange={(e) => setBackground(e.target.value)} value={background} />
+                <br />
+                <button onClick={download}>Download</button>
             </div>
             <div className={styles.right} style={{ backgroundColor: background }}>
-                <svg height="400px" width="900px">
-                    <g>
-                        <text
-                            style={{ '--stroke-color': stroke }}
-                            x="50%"
-                            y="50%"
-                            fill={fill}
-                            dominantBaseline="middle"
-                            textAnchor="middle"
-                            fontFamily="Madgue"
-                            fontSize="10rem"
-                        >
-                            {text}
-                        </text>
-                    </g>
-                </svg>
+                <div
+                    id={styles.neonText}
+                    style={{
+                        color: fill,
+                        ['--stroke-color']: stroke,
+                        ['--neonStrokeWidth']: `${strokeWidth}px`,
+                        ['--glowColor']: `${glow}`,
+                    }}
+                >
+                    {text}
+                </div>
             </div>
         </div>
     );

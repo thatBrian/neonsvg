@@ -18,3 +18,27 @@
     justify-content: center;
     flex-direction: column;
 }
+
+#neonText {
+    text-align: center;
+    font-size: 8rem;
+    font-family: Madgue;
+    padding: 50px;
+    text-shadow: calc(var(--neonStrokeWidth) * 1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.3827) calc(var(--neonStrokeWidth) * 0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0) calc(var(--neonStrokeWidth) * 1) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.3827) calc(var(--neonStrokeWidth) * 0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.9239) calc(var(--neonStrokeWidth) * -0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.7071) calc(var(--neonStrokeWidth) * -0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.3827) calc(var(--neonStrokeWidth) * -0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0) calc(var(--neonStrokeWidth) * -1) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.3827) calc(var(--neonStrokeWidth) * -0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * -0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * -0.3827) 0 var(--stroke-color), 0 0 7px #fff,
+        0 0 10px var(--glowColor), 0 0 21px var(--glowColor), 0 0 42px var(--glowColor), 0 0 82px var(--glowColor);
+}
