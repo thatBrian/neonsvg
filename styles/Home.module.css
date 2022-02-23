@@ -21,9 +21,8 @@
 
 #neonText {
     text-align: center;
-    font-size: 8rem;
     font-family: Madgue;
-    padding: 50px;
+    padding: 40px 50px;
     text-shadow: calc(var(--neonStrokeWidth) * 1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
         calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
         calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
