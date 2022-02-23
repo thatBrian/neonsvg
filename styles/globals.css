@@ -1,16 +1,123 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color */
+
+    --transparent1: rgba(255, 255, 255, 0.04);
+    --transparent2: rgba(255, 255, 255, 0.175);
+    --transparent3: rgba(255, 255, 255, 0.2);
+    --transparent4: rgba(0, 0, 0, 0.2);
+    --transparent5: rgba(255, 255, 255, 0.5);
+    --transparent6: rgba(255, 255, 255, 0.1);
+
+    --white1: #ffffff;
+
+    --black1: #000000;
+
+    --purple1: #2a1752;
+    --purple2: #7754db;
+    --purple3: #26115a;
+    --purple4: #13092d;
+    --purple5: #d1b8ee;
+
+    --pink1: #ff14b1;
+    --pink2: #8a095f;
+    --pink3: #ec008c;
+
+    --yellow1: #ffd600;
+    --yellow2: rgb(255, 255, 20);
+    --yellow3: #f2e216;
+
+    --green1: #14ff63;
+
+    --red1: #ff0000;
+    --red2: #da2c3d;
+
+    /* Z-index */
+    --menu: 1;
+    --menuNavigation: 2;
+
+    --screenWidthRatio: calc(100vw / 1920);
+
+    --neonStrokeWidth: 2px;
+}
+
+.gradient__background {
+    background-color: var(--transparent1);
+    position: absolute;
+    top: -100px;
+    bottom: -100px;
+    right: -50vw;
+    left: -50vw;
+    transform: rotate(-4deg);
+    pointer-events: none;
+}
+
+.neon__text {
+    font-family: 'Madgue';
+    font-size: 6rem;
+    line-height: 5rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.neon__text_yellow {
+    --stroke-color: var(--yellow1);
+    text-shadow: calc(var(--neonStrokeWidth) * 1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.3827) calc(var(--neonStrokeWidth) * 0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0) calc(var(--neonStrokeWidth) * 1) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.3827) calc(var(--neonStrokeWidth) * 0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.9239) calc(var(--neonStrokeWidth) * -0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.7071) calc(var(--neonStrokeWidth) * -0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.3827) calc(var(--neonStrokeWidth) * -0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0) calc(var(--neonStrokeWidth) * -1) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.3827) calc(var(--neonStrokeWidth) * -0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * -0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * -0.3827) 0 var(--stroke-color), 0 0 7px #fff,
+        0 0 10px var(--yellow1), 0 0 21px var(--yellow1), 0 0 42px var(--yellow1), 0 0 82px var(--pink3);
+}
+
+@font-face {
+    font-family: 'Madgue';
+    src: url('/Madgue.ttf');
+}
+
+text {
+    text-shadow: calc(var(--neonStrokeWidth) * 1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.3827) calc(var(--neonStrokeWidth) * 0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0) calc(var(--neonStrokeWidth) * 1) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.3827) calc(var(--neonStrokeWidth) * 0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.7071) calc(var(--neonStrokeWidth) * 0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.9239) calc(var(--neonStrokeWidth) * 0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -1) calc(var(--neonStrokeWidth) * 0) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.9239) calc(var(--neonStrokeWidth) * -0.3827) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.7071) calc(var(--neonStrokeWidth) * -0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * -0.3827) calc(var(--neonStrokeWidth) * -0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0) calc(var(--neonStrokeWidth) * -1) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.3827) calc(var(--neonStrokeWidth) * -0.9239) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.7071) calc(var(--neonStrokeWidth) * -0.7071) 0 var(--stroke-color),
+        calc(var(--neonStrokeWidth) * 0.9239) calc(var(--neonStrokeWidth) * -0.3827) 0 var(--stroke-color), 0 0 7px #fff,
+        0 0 10px var(--yellow1), 0 0 21px var(--yellow1), 0 0 42px var(--yellow1), 0 0 82px var(--pink3);
 }
